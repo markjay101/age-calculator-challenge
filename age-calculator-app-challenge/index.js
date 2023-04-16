@@ -98,10 +98,21 @@ function renderAge(dayAge, monthAge, yearAge){
     valid(dayLabel, day)
     valid(monthLabel, month)
     valid(yearLabel, year)
-        
-    dayEl.textContent = dayAge.toString();
-    monthEl.textContent = monthAge.toString();
-    yearEl.textContent = yearAge.toString();
+    
+    if(dayAge > 1)
+        dayEl.innerHTML = `<span>${dayAge.toString()}</span> days`
+    else
+        dayEl.innerHTML = `<span>${dayAge.toString()}</span> day`
+
+    if(monthAge > 1)
+        monthEl.innerHTML = `<span>${monthAge.toString()}</span> months`
+    else
+        monthEl.innerHTML = `<span>${monthAge.toString()}</span> month`
+
+    if(yearAge > 1)
+        yearEl.innerHTML = `<span>${yearAge.toString()}</span> years`
+    else
+        yearEl.innerHTML = `<span>${yearAge.toString()}</span> year`
 }
 
 //check input day everytime the keys are click
